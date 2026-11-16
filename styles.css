@@ -1,1 +1,1087 @@
+/* =====================================================
+   SajiKas - styles.css
+   Kelompok 4, Kelas WebDev A
+   ===================================================== */
 
+/* =====================================================
+   BAGIAN UI/UX DESIGNER 1
+   Warna merek, tipografi, tata letak, dan responsif
+   ===================================================== */
+
+/* --- Warna dasar: netral hangat, tombol hitam, kuning hanya untuk penanda --- */
+:root {
+  --latar: #f5f4f0;
+  --permukaan: #ecebe8;
+  --gelap: #141314;
+  --garis: #d6d5d2;
+  --garis-isian: #8a8986;
+  --teks: #000000;
+  --teks-kedua: #373737;
+  --teks-redup: #505050;
+  --teks-terang: #fcfcfd;
+  --kuning: #ffc61a;
+
+  --huruf-judul: "EB Garamond", Georgia, "Times New Roman", serif;
+  --huruf-teks: "Host Grotesk", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--gelap);
+}
+
+/* --- Tipografi: EB Garamond untuk judul, Host Grotesk untuk teks --- */
+body {
+  font-family: var(--huruf-teks);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--teks);
+  background-color: var(--latar);
+  overflow-x: clip;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--huruf-judul);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  font-variant-numeric: lining-nums;
+  /* Baris judul dibuat sama panjang, tanpa satu kata tertinggal sendirian */
+  text-wrap: balance;
+}
+
+/* Judul utama: 83px di layar lebar, 46px di ponsel */
+h1 {
+  font-size: clamp(2.9rem, 2.3rem + 3.2vw, 5.2rem);
+  line-height: 1.02;
+  max-width: 15ch;
+}
+
+/* Judul bagian memakai Host Grotesk; EB Garamond hanya untuk judul utama dan angka */
+h2 {
+  font-family: var(--huruf-teks);
+  font-size: clamp(1.875rem, 1.6rem + 1.1vw, 2.625rem);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  max-width: 16ch;
+}
+
+h3 {
+  font-family: var(--huruf-teks);
+  font-size: 1.375rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+::selection {
+  background-color: var(--kuning);
+  color: var(--teks);
+}
+
+/* --- Wadah agar isi tidak terlalu lebar --- */
+.wadah {
+  max-width: 1248px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  scroll-margin-top: 72px;
+}
+
+/* Jarak atas dan bawah setiap blok isi */
+.blok {
+  padding-top: 112px;
+  padding-bottom: 80px;
+}
+
+/* Judul bagian di kiri, satu tombol kecil di kanan pada baris yang sama */
+.kepala-bagian {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.pengantar {
+  color: var(--teks-kedua);
+  font-size: 1.125rem;
+  margin-top: 12px;
+  max-width: 44ch;
+}
+
+/* --- Header: Flexbox, merek di kiri, menu dan tombol di kanan --- */
+#header-section {
+  background-color: var(--gelap);
+  color: var(--teks-terang);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.baris-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  min-height: 72px;
+}
+
+.merek {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: auto;
+  font-family: var(--huruf-judul);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--teks-terang);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  color: var(--teks-terang);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 0;
+}
+
+/* Tombol menu hanya tampil di ponsel */
+.tombol-menu {
+  display: none;
+}
+
+/* --- Hero: latar kedua, teks di kiri dan dasbor di kanan --- */
+.pembuka {
+  padding: 96px 0 96px;
+  background-color: var(--permukaan);
+}
+
+.kisi-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.sub-judul {
+  font-size: 1.125rem;
+  color: var(--teks-kedua);
+  max-width: 46ch;
+  margin-top: 24px;
+}
+
+/* Dua tombol berjajar dengan Flexbox */
+.baris-aksi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+/* Tiga angka kunci dalam satu baris berkotak */
+.angka-kunci {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 48px;
+  max-width: 560px;
+}
+
+/* --- Tiga keunggulan: foto dan teks bergantian sisi, lebar foto berbeda --- */
+.baris-fitur {
+  display: grid;
+  align-items: stretch;
+  margin-top: 16px;
+}
+
+.kepala-bagian + .baris-fitur {
+  margin-top: 48px;
+}
+
+.fitur-1 { grid-template-columns: 7fr 5fr; }
+.fitur-2 { grid-template-columns: 6fr 6fr; }
+.fitur-3 { grid-template-columns: 5fr 7fr; }
+
+/* Baris kedua: teks di kiri, foto di kanan */
+.fitur-2 .bingkai-foto { order: 2; }
+
+/* --- Katalog: tiga kartu berjajar --- */
+.kisi-katalog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+  align-items: stretch;
+}
+
+/* --- Kalkulator: latar kedua, langkah di kiri dan formulir di kanan --- */
+#calc-section {
+  background-color: var(--permukaan);
+}
+
+.kisi-kalkulator {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: 64px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+/* --- Footer --- */
+#footer-section {
+  background-color: var(--gelap);
+  color: var(--teks-terang);
+  padding: 96px 0 40px;
+  overflow: hidden;
+}
+
+.kisi-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 48px;
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid #3a3a3a;
+}
+
+/* --- Responsif: layar ponsel dan tablet kecil --- */
+@media (max-width: 768px) {
+  .baris-header {
+    min-height: 64px;
+    gap: 12px;
+  }
+
+  /* Menu disembunyikan, lalu dibuka dengan tombol Menu */
+  nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 24px 20px;
+    background-color: var(--gelap);
+  }
+
+  nav.terbuka {
+    display: flex;
+  }
+
+  nav a {
+    padding: 12px 0;
+    font-size: 1.125rem;
+  }
+
+  .tombol-menu {
+    display: inline-block;
+  }
+
+  .pembuka {
+    padding: 48px 0 64px;
+  }
+
+  .blok {
+    padding-top: 72px;
+    padding-bottom: 56px;
+  }
+
+  /* Semua kolom menumpuk ke bawah */
+  .kisi-hero,
+  .baris-fitur,
+  .kisi-katalog,
+  .kisi-kalkulator,
+  .kisi-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .kisi-hero,
+  .kisi-kalkulator {
+    gap: 48px;
+  }
+
+  .kisi-footer {
+    gap: 28px;
+    margin-top: 48px;
+  }
+
+  /* Foto selalu di atas teksnya */
+  .fitur-2 .bingkai-foto {
+    order: 0;
+  }
+
+  .baris-aksi .tombol {
+    width: 100%;
+  }
+}
+
+/* =====================================================
+   BAGIAN UI/UX DESIGNER 2
+   Tombol, bingkai, kartu katalog, kotak kalkulator,
+   sudut, bayangan, dan efek saat disentuh kursor
+   ===================================================== */
+
+/* --- Logo --- */
+.logo {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* --- Tombol --- */
+.tombol {
+  display: inline-block;
+  border: 1.5px solid var(--gelap);
+  border-radius: 8px;
+  padding: 13px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  line-height: 1.4;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.tombol-utama {
+  background-color: var(--gelap);
+  color: var(--teks-terang);
+}
+
+/* Tombol utama berubah menjadi kuning saat disentuh kursor */
+.tombol-utama:hover {
+  background-color: var(--kuning);
+  border-color: var(--kuning);
+  color: var(--teks);
+}
+
+.tombol-kedua {
+  background-color: transparent;
+  color: var(--teks);
+}
+
+.tombol-kedua:hover {
+  background-color: var(--gelap);
+  color: var(--teks-terang);
+}
+
+/* Dua tombol terang di atas footer yang gelap */
+.tombol-terang {
+  background-color: var(--latar);
+  border-color: var(--latar);
+  color: var(--teks);
+}
+
+.tombol-terang:hover {
+  background-color: var(--kuning);
+  border-color: var(--kuning);
+}
+
+.tombol-garis-terang {
+  background-color: transparent;
+  border-color: var(--teks-terang);
+  color: var(--teks-terang);
+}
+
+.tombol-garis-terang:hover {
+  background-color: var(--teks-terang);
+  color: var(--teks);
+}
+
+.tombol-kecil {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.tombol-menu {
+  background-color: transparent;
+  border: 1.5px solid var(--teks-terang);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--teks-terang);
+  cursor: pointer;
+}
+
+/* Tombol di header dibuat terang agar terlihat di atas latar gelap */
+#header-section .tombol-utama {
+  background-color: var(--latar);
+  border-color: var(--latar);
+  color: var(--teks);
+}
+
+#header-section .tombol-utama:hover {
+  background-color: var(--kuning);
+  border-color: var(--kuning);
+}
+
+#header-section a:focus-visible,
+#header-section button:focus-visible {
+  outline-color: var(--kuning);
+}
+
+.tombol:active {
+  transform: translateY(1px);
+}
+
+/* Tanda fokus untuk pengguna papan ketik */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--teks);
+  outline-offset: 3px;
+}
+
+.penutup a:focus-visible {
+  outline-color: var(--teks-terang);
+}
+
+nav a:hover {
+  color: var(--kuning);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* --- Teks kecil di hero --- */
+.label-kecil {
+  display: inline-block;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--teks-kedua);
+  background-color: var(--latar);
+  margin-bottom: 28px;
+}
+
+.keterangan-aksi {
+  color: var(--teks-redup);
+  font-size: 0.875rem;
+  margin-top: 16px;
+}
+
+/* Teks kecil syarat dan ketentuan */
+.teks-kecil {
+  color: var(--teks-redup);
+  font-size: 0.875rem;
+  margin-top: 4px;
+  max-width: 44ch;
+}
+
+.angka-kunci {
+  border-radius: 8px;
+  background-color: var(--latar);
+}
+
+.angka-kunci div {
+  padding: 16px 18px;
+}
+
+.angka-kunci div + div {
+  border-left: 1px solid var(--garis);
+}
+
+.angka-kunci dt {
+  font-family: var(--huruf-judul);
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  font-variant-numeric: lining-nums;
+}
+
+.angka-kunci dd {
+  font-size: 0.875rem;
+  color: var(--teks-redup);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* --- Bingkai dasbor --- */
+.bingkai-layar {
+  border-radius: 12px;
+  background-color: var(--latar);
+  padding: 12px;
+}
+
+.angka-layar {
+  font-family: var(--huruf-judul);
+  font-weight: 500;
+}
+
+.bingkai-layar svg {
+  width: 100%;
+  height: auto;
+  font-family: var(--huruf-teks);
+}
+
+.bingkai-layar figcaption {
+  margin-top: 12px;
+  padding: 0 4px 2px;
+  font-size: 0.875rem;
+  color: var(--teks-redup);
+}
+
+/* --- Baris keunggulan: satu kotak berisi foto dan teks --- */
+.baris-fitur {
+  background-color: var(--permukaan);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bingkai-foto {
+  position: relative;
+  padding: 12px;
+  background-color: var(--permukaan);
+}
+
+.bingkai-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Tiap foto dipotong dengan bentuk berbeda */
+.fitur-1 .bingkai-foto img { aspect-ratio: 16 / 9; object-position: 50% 30%; }
+.fitur-2 .bingkai-foto img { aspect-ratio: 4 / 3; }
+.fitur-3 .bingkai-foto img { aspect-ratio: 1 / 1; object-position: 60% 40%; }
+
+/* Label kecil di sudut foto */
+.bingkai-foto figcaption {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  background-color: var(--latar);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.teks-fitur {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+}
+
+.nomor-fitur {
+  font-family: var(--huruf-judul);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: var(--teks-redup);
+  margin-bottom: auto;
+  padding-bottom: 32px;
+}
+
+.teks-fitur p:last-child {
+  color: var(--teks-kedua);
+  margin-top: 12px;
+  max-width: 40ch;
+}
+
+/* --- Kartu paket --- */
+.kartu-paket {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--permukaan);
+  border-radius: 8px;
+  padding: 32px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Kartu terangkat dan berbayang saat disentuh kursor */
+.kartu-paket:hover {
+  box-shadow: 0 14px 28px rgba(20, 19, 20, 0.12);
+  transform: translateY(-3px);
+}
+
+.kartu-paket h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Seluruh permukaan kartu ikut menjadi tautan */
+.kartu-paket h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+}
+
+.untuk-siapa {
+  color: var(--teks-kedua);
+  margin-top: 8px;
+}
+
+.harga {
+  font-family: var(--huruf-judul);
+  font-size: 2.25rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin-top: 28px;
+  font-variant-numeric: lining-nums;
+}
+
+.harga span {
+  font-family: var(--huruf-teks);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--teks-redup);
+  white-space: nowrap;
+}
+
+.kartu-paket ul {
+  list-style: none;
+  flex-grow: 1;
+  margin: 24px 0 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--garis);
+}
+
+.kartu-paket li {
+  padding: 6px 0 6px 22px;
+  position: relative;
+  color: var(--teks-kedua);
+}
+
+/* Titik kecil pengganti bullet bawaan */
+.kartu-paket li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 16px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--teks);
+}
+
+.ajakan-kartu {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.ajakan-kartu::after {
+  content: " \2192";
+}
+
+/* --- Paket rekomendasi: kartu gelap --- */
+.kartu-unggulan {
+  background-color: var(--gelap);
+  color: var(--teks-terang);
+}
+
+.kartu-unggulan .untuk-siapa,
+.kartu-unggulan .harga span,
+.kartu-unggulan li {
+  color: #d2d1ce;
+}
+
+.kartu-unggulan ul {
+  border-top-color: #3a3a3a;
+}
+
+.kartu-unggulan li::before {
+  background-color: var(--kuning);
+}
+
+.kartu-unggulan h3 a:focus-visible {
+  outline-color: var(--kuning);
+}
+
+/* Satu-satunya label kuning di halaman */
+.pita {
+  align-self: flex-start;
+  background-color: var(--kuning);
+  color: var(--teks);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.info-promo {
+  margin-top: 32px;
+  color: var(--teks-kedua);
+}
+
+.info-promo strong {
+  color: var(--teks);
+  background-color: var(--kuning);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+/* --- Pertanyaan yang bisa dibuka dan ditutup --- */
+.daftar-tanya {
+  margin-top: 48px;
+  background-color: var(--permukaan);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.daftar-tanya details + details {
+  border-top: 1px solid var(--garis);
+}
+
+.daftar-tanya summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 24px;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.daftar-tanya summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Tanda tambah berubah menjadi tanda kurang saat dibuka */
+.daftar-tanya summary::after {
+  content: "+";
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid var(--gelap);
+  border-radius: 6px;
+  color: var(--teks);
+  font-size: 1.125rem;
+  line-height: 25px;
+  text-align: center;
+}
+
+.daftar-tanya details[open] summary::after {
+  content: "\2212";
+  background-color: var(--gelap);
+  color: var(--teks-terang);
+}
+
+.daftar-tanya summary:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.daftar-tanya summary:focus-visible {
+  outline-offset: -3px;
+}
+
+.daftar-tanya details p {
+  padding: 0 24px 22px;
+  color: var(--teks-kedua);
+  max-width: 62ch;
+}
+
+/* --- Kalkulator: tiga langkah yang tersambung garis --- */
+.langkah {
+  list-style: none;
+  counter-reset: langkah;
+}
+
+.langkah li {
+  counter-increment: langkah;
+  position: relative;
+  padding: 0 0 36px 60px;
+}
+
+.langkah li:last-child {
+  padding-bottom: 0;
+}
+
+/* Nomor di dalam kotak hitam */
+.langkah li::before {
+  content: counter(langkah);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  background-color: var(--gelap);
+  border-radius: 8px;
+  color: var(--teks-terang);
+  font-weight: 600;
+  line-height: 36px;
+  text-align: center;
+}
+
+/* Garis penyambung antarlangkah */
+.langkah li::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 40px;
+  bottom: 4px;
+  border-left: 1px solid var(--garis-isian);
+}
+
+.langkah li:last-child::after {
+  display: none;
+}
+
+.langkah h3 {
+  font-family: var(--huruf-teks);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 36px;
+}
+
+.langkah p {
+  color: var(--teks-kedua);
+}
+
+/* --- Kotak kalkulator --- */
+.kotak-kalkulator {
+  background-color: var(--latar);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.isian {
+  padding: 28px 28px 8px;
+}
+
+.kolom-isian {
+  margin-bottom: 20px;
+}
+
+.kolom-isian label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.kolom-isian select,
+.kolom-isian input {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--teks);
+  background-color: #ffffff;
+  border: 1px solid var(--garis-isian);
+  border-radius: 8px;
+  caret-color: var(--teks);
+}
+
+.kolom-isian input::placeholder {
+  color: #6b6a68;
+}
+
+/* Panah dropdown digambar sendiri agar sama di semua browser */
+.kolom-isian select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23000000' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+/* Tombol hitung berada di kaki formulir */
+.kaki-isian {
+  padding: 20px 28px;
+  border-top: 1px solid var(--garis);
+}
+
+.kaki-isian .tombol {
+  width: 100%;
+}
+
+/* --- Kotak hasil perhitungan --- */
+.hasil {
+  padding: 20px 28px 24px;
+  border-top: 1px solid var(--garis);
+}
+
+.hasil-kosong {
+  color: var(--teks-redup);
+}
+
+.baris-hasil {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 6px 0;
+  color: var(--teks-kedua);
+  font-variant-numeric: tabular-nums;
+}
+
+.baris-hasil span:last-child {
+  white-space: nowrap;
+}
+
+.baris-diskon span:last-child {
+  color: var(--teks);
+  background-color: var(--kuning);
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+.baris-total {
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--garis);
+  color: var(--teks);
+  font-weight: 600;
+}
+
+.baris-total span:last-child {
+  font-family: var(--huruf-judul);
+  font-size: 1.9rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  font-variant-numeric: lining-nums;
+}
+
+.catatan-promo {
+  font-size: 0.875rem;
+  color: var(--teks-redup);
+  margin-top: 10px;
+}
+
+.pesan-galat {
+  color: #a11a12;
+  font-weight: 500;
+}
+
+/* --- Penutup: judul di kiri dan dua tombol di kanan, di atas footer gelap --- */
+.penutup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+}
+
+.penutup .baris-aksi {
+  margin-top: 0;
+}
+
+/* --- Isi footer --- */
+.merek-footer {
+  font-family: var(--huruf-judul);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.kisi-footer h3 {
+  font-family: var(--huruf-teks);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: #b9b8b5;
+  margin-bottom: 8px;
+}
+
+.kisi-footer p {
+  max-width: 56ch;
+}
+
+.hak-cipta {
+  margin-top: 48px;
+  color: #b9b8b5;
+  font-size: 0.875rem;
+}
+
+/* --- Penyesuaian komponen di ponsel --- */
+@media (max-width: 768px) {
+  .angka-kunci div {
+    padding: 14px 12px;
+  }
+
+  .angka-kunci dt {
+    font-size: 1.25rem;
+  }
+
+  .bingkai-layar {
+    padding: 8px;
+  }
+
+  .teks-fitur {
+    padding: 28px 24px;
+  }
+
+  .nomor-fitur {
+    padding-bottom: 16px;
+  }
+
+  .fitur-1 .bingkai-foto img,
+  .fitur-2 .bingkai-foto img,
+  .fitur-3 .bingkai-foto img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .kartu-paket {
+    padding: 24px;
+  }
+
+  .isian {
+    padding: 24px 20px 4px;
+  }
+
+  .kaki-isian,
+  .hasil {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .penutup .baris-aksi {
+    width: 100%;
+  }
+}
+
+/* Pengunjung yang mematikan animasi tidak mendapat gerakan */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .tombol,
+  .kartu-paket {
+    transition: none;
+  }
+
+  .kartu-paket:hover,
+  .tombol:active {
+    transform: none;
+  }
+}
