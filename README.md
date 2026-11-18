@@ -48,7 +48,7 @@ Smart Cloud-Based Cashier Application adalah sistem aplikasi kasir berbasis web 
 
 🌐 Link Live Website
 Aplikasi ini dapat diakses secara langsung melalui tautan berikut:
-👉 [Kunjungi Smart Cashier App](https://username-kamu.github.io/nama-repositori-kalian/)
+👉 [Kunjungi Smart Cashier App] (https://sharentina.github.io/smart-cashier-app/)
 
 ---
 *Dikembangkan oleh Tim Proyek Web Development.*
