@@ -4,7 +4,8 @@ Proyek kelompok Smart Cloud-Based Cashier Application
 #SAJIKAS (Smart Cloud-Based Cashier Application)
 
 > Kelas: WebDev A  
-> Kelompok: Kelompok 4  
+> Kelompok: Kelompok 4
+> Nama Merk : SAJIKAS
 > Tema Studi Kasus: Layanan Aplikasi Kasir Pintar Berbasis Awan untuk Usaha Kuliner  
 > Tautan Live Website: (https://sharentina.github.io/smart-cashier-app/)
 
