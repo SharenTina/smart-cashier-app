@@ -3,9 +3,10 @@ Proyek kelompok Smart Cloud-Based Cashier Application
 
 #SAJIKAS (Smart Cloud-Based Cashier Application)
 
-> Proyek Pengembangan Aplikasi Kasir Berbasis Web - Tugas Kelompok 4
-> Kelas Bisnis Digital A
-> Web Development
+> Kelas: WebDev A  
+> Kelompok: Kelompok 4  
+> Tema Studi Kasus: Layanan Aplikasi Kasir Pintar Berbasis Awan untuk Usaha Kuliner  
+> Tautan Live Website: (https://sharentina.github.io/smart-cashier-app/)
 
 📌 Deskripsi Proyek
 Smart Cloud-Based Cashier Application adalah sistem aplikasi kasir berbasis web yang terintegrasi untuk mendukung pencatatan transaksi penjualan secara real-time, pengelolaan stok otomatis, serta penyediaan dashboard monitoring bagi pengelola bisnis guna meningkatkan efisiensi operasional.
@@ -46,9 +47,5 @@ Smart Cloud-Based Cashier Application adalah sistem aplikasi kasir berbasis web 
 * JavaScript – Logika fungsional aplikasi kasir
 * GitHub Pages – Platform deployment dan hosting web gratis
 
-🌐 Link Live Website
-Aplikasi ini dapat diakses secara langsung melalui tautan berikut:
-👉 [Kunjungi Smart Cashier App] (https://sharentina.github.io/smart-cashier-app/)
 
----
 *Dikembangkan oleh Tim Proyek Web Development.*
