@@ -1,7 +1,7 @@
 # smart-cashier-app
 Proyek kelompok Smart Cloud-Based Cashier Application
 
-# Smart Cloud-Based Cashier Application
+#SAJIKAS (Smart Cloud-Based Cashier Application)
 
 > Proyek Pengembangan Aplikasi Kasir Berbasis Web - Tugas Kelompok 4
 > Kelas Bisnis Digital A
